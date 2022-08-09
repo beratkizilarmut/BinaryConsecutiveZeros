@@ -9,7 +9,7 @@ void Binary_Consecutive_Zero_Counter(int val) /* Checking for consecutive zeros 
 {   
     int prev_bit=0, counter=0, highest_counter=0; /* Creating flags */
 
-    for(int i = 0; val > 1; i++) /* Loopin up UNTIL zero */
+    for(int i = 0; val > 0; i++) /* Loopin up UNTIL zero */
     {
         if(Bit(val) == 1) /* Bit is one */
         {
@@ -23,8 +23,8 @@ void Binary_Consecutive_Zero_Counter(int val) /* Checking for consecutive zeros 
         }
         if(counter > highest_counter) /* Check if we have highest counter */
             highest_counter = counter; /* Assign new highest counter */
-        val = val / 2; /* Halved the value */
         printf("bit number [%d], bit [%d] \n", i, val % 2); /* Printing bit number and bit value */
+        val = val / 2; /* Halved the value */
     }
     printf("Highest amount of consecutive zeros on the binary is %d", highest_counter); /* Printing result */
 }
